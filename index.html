@@ -1,39 +1,96 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Ets Vrignaud - Accueil</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Accueil - ets Vrignaud</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #f0f2f5;
+    }
+    .hero {
+      padding: 100px 0;
+      background: linear-gradient(to right, #007bff, #00b4d8);
+      color: white;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: bold;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+    .btn-custom {
+      padding: 10px 25px;
+      font-size: 1.1rem;
+      border-radius: 30px;
+    }
+    footer {
+      background-color: #343a40;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      margin-top: 60px;
+    }
+  </style>
 </head>
 <body>
-<header>
-    <h1>Ets Vrignaud</h1>
-    <nav>
-        <a href="index.html">Accueil</a>
-        <a href="entreprise.html">L'entreprise</a>
-        <a href="galerie.html">Galerie</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-</header>
-<main>
-    <section>
-        <h2>Bienvenue</h2>
-        <p>Notre entreprise familiale vous accompagne dans tous vos projets de menuiserie : création, rénovation ou amélioration depuis 1963. Nous vous offrons un accompagnement complet, du devis à la réception du chantier.</p>
-        <ul>
-            <li>Aménagements intérieurs/extérieurs</li>
-            <li>Escaliers, garde-corps, balcon</li>
-            <li>Menuiseries int/ext</li>
-            <li>Revêtements de sols bois/stratifiés</li>
-            <li>Pose électroménagers</li>
-            <li>Travaux accessibilité/prim'adapt</li>
-            <li>Petits travaux en tout genre</li>
-        </ul>
-        <p>À votre service !</p>
-        <p><strong>Benoit Vrignaud</strong></p>
-    </section>
-</main>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">ets Vrignaud</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link active" href="index.html">Accueil</a></li>
+        <li class="nav-item"><a class="nav-link" href="entreprise.html">Entreprise</a></li>
+        <li class="nav-item"><a class="nav-link" href="galerie.html">Galerie</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="container">
+    <h1>Bienvenue chez ets Vrignaud</h1>
+    <p>Votre partenaire en [ton activité – ex: travaux publics, rénovation, etc.].</p>
+    <a href="galerie.html" class="btn btn-light btn-custom">Voir notre galerie</a>
+  </div>
+</section>
+
+<!-- Contenu complémentaire -->
+<div class="container mt-5">
+  <div class="row text-center">
+    <div class="col-md-4">
+      <h3>Notre Expertise</h3>
+      <p>Des années d’expérience dans notre domaine, au service de vos projets.</p>
+    </div>
+    <div class="col-md-4">
+      <h3>Nos Réalisations</h3>
+      <p>Découvrez nos projets en images dans la galerie dédiée.</p>
+    </div>
+    <div class="col-md-4">
+      <h3>Contactez-nous</h3>
+      <p>Des questions ? Besoin d’un devis ? <a href="contact.html">Cliquez ici</a>.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
 <footer>
-    <p>© 2025 Ets Vrignaud</p>
+  <div class="container">
+    &copy; 2025 ets Vrignaud — Tous droits réservés.
+  </div>
 </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

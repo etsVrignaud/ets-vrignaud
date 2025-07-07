@@ -1,30 +1,63 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Présentation - Ets Vrignaud</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Entreprise - ets Vrignaud</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body { background-color: #f8f9fa; }
+    .content-section { padding: 40px 0; }
+  </style>
 </head>
 <body>
-<header>
-    <h1>Ets Vrignaud</h1>
-    <nav>
-        <a href="index.html">Accueil</a>
-        <a href="entreprise.html">L'entreprise</a>
-        <a href="galerie.html">Galerie</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-</header>
-<main>
-    <section>
-        <h2>Présentation de l'entreprise</h2>
-        <p>Après un apprentissage dans diverses régions de notre douce France, Benoit s'installe aux commandes des établissements Vrignaud, perpétuant une lignée de menuisiers vieille de 3 générations.</p>
-        <p>Ses expériences dans l’aménagement, les monuments historiques ou encore l’escalier lui permettent d’offrir une large palette de compétences. Il assure un suivi tout au long du projet, limitant les interlocuteurs pour un climat de confiance et d’efficacité.</p>
-        <p>Un prix, un délai, un service et des garanties : voilà ce qui fait des Ets Vrignaud un artisan qualifié.</p>
-    </section>
-</main>
-<footer>
-    <p>© 2025 Ets Vrignaud</p>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">ets Vrignaud</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+        <li class="nav-item"><a class="nav-link active" href="entreprise.html">Entreprise</a></li>
+        <li class="nav-item"><a class="nav-link" href="galerie.html">Galerie</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Contenu -->
+<section class="content-section">
+  <div class="container">
+    <h1>À propos de notre entreprise</h1>
+    <p>
+      Chez ets Vrignaud, nous sommes passionnés par notre métier.  
+      Notre équipe expérimentée travaille chaque jour pour fournir des solutions innovantes et adaptées à vos besoins.
+    </p>
+    <p>
+      Nous intervenons dans les domaines suivants :
+    </p>
+    <ul>
+      <li>Conseil et accompagnement</li>
+      <li>Développement sur mesure</li>
+      <li>Maintenance et support</li>
+      <li>Formation et transfert de compétences</li>
+    </ul>
+    <p>
+      Notre mission est de vous aider à réussir vos projets avec efficacité et sérénité.
+    </p>
+  </div>
+</section>
+
+<!-- Pied de page -->
+<footer class="bg-dark text-white text-center py-3">
+  &copy; 2025 ets Vrignaud — Tous droits réservés
 </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Graine d’Ébène</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Graine d’Ébène</h1>
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="entreprise.html">Entreprise</a>
+            <a href="galerie.html">Galerie</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Nous contacter</h2>
+            <p>Pour toute demande de devis ou d’information, n’hésitez pas à nous écrire :</p>
+
+            <form action="mailto:ton-adresse@mail.com" method="post" enctype="text/plain">
+                <label for="name">Nom :</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="email">Email :</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="message">Message :</label><br>
+                <textarea id="message" name="message" rows="5" required></textarea><br><br>
+
+                <button type="submit" class="btn">Envoyer</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Graine d’Ébène - Tous droits réservés</p>
+    </footer>
+</body>
+</html>

@@ -1,38 +1,123 @@
 ﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galerie - ETS Vrignaud</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galerie - ETS Vrignaud</title>
+<link rel="stylesheet" href="style.css">
+<style>
+/* Galerie responsive */
+.galerie {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+.galerie img {
+    width: 100%;
+    border-radius: 5px;
+    border: 2px solid #D97F2C;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+.galerie img:hover {
+    transform: scale(1.05);
+}
+
+/* Lightbox */
+#lightbox {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(75, 54, 33, 0.9); /* marron foncé transparent */
+    justify-content: center;
+    align-items: center;
+}
+#lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border: 3px solid #D97F2C;
+    border-radius: 5px;
+}
+#lightbox:target {
+    display: flex;
+}
+#lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #FFFFFF;
+    font-size: 2em;
+    text-decoration: none;
+}
+</style>
 </head>
 <body>
-    <header>
-        <h1>ETS Vrignaud</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="entreprise.html">Entreprise</a></li>
-                <li><a href="galerie.html">Galerie</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main>
-        <section>
-            <h2>Nos réalisations</h2>
-            <p>Découvrez quelques-uns de nos projets de menuiserie et agencements sur mesure :</p>
-            <div class="galerie">
-                <img src="images/1.jpg" alt="Projet 1" width="300">
-                <img src="images/2.jpg" alt="Projet 2" width="300">
-                <img src="images/3.jpg" alt="Projet 3" width="300">
-            </div>
-        </section>
-    </main>
+<header>
+    <h1>ETS Vrignaud</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="entreprise.html">Entreprise</a></li>
+            <li><a href="galerie.html">Galerie</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <footer>
-        <p>&copy; 2025 ETS Vrignaud. Tous droits réservés.</p>
-    </footer>
+<main>
+<section>
+    <h2>Nos réalisations</h2>
+    <p>Découvrez nos projets de menuiserie et agencements sur mesure :</p>
+
+    <div class="galerie" id="galerie-container">
+        <!-- Les images seront ajoutées par JS -->
+    </div>
+</section>
+</main>
+
+<!-- Lightbox -->
+<div id="lightbox">
+    <a href="#" id="lightbox-close">&times;</a>
+    <img src="" alt="Agrandissement">
+</div>
+
+<script>
+// Générer automatiquement les 15 images
+const galerie = document.getElementById('galerie-container');
+for (let i = 1; i <= 15; i++) {
+    const img = document.createElement('img');
+    img.src = `images/${i}.jpg`;
+    img.alt = `Projet ${i}`;
+    img.onclick = () => openLightbox(img.src);
+    galerie.appendChild(img);
+}
+
+// Fonction lightbox
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = lightbox.querySelector('img');
+
+function openLightbox(src) {
+    lightboxImg.src = src;
+    window.location.hash = "lightbox";
+}
+
+// Fermer la lightbox en cliquant sur le fond ou le "×"
+lightbox.onclick = function(e) {
+    if (e.target === lightbox || e.target.id === 'lightbox-close') {
+        window.location.hash = "";
+    }
+};
+</script>
+
+<footer>
+    <p>&copy; 2025 ETS Vrignaud. Tous droits réservés.</p>
+</footer>
+
 </body>
 </html>

@@ -1,75 +1,118 @@
-﻿<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - ETS Vrignaud</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+﻿/* style.css */
 
-<header>
-    <div class="logo-container">
-        <img src="images/hero.jpg" alt="Logo ETS Vrignaud" class="logo-left">
-        <h1>ETS Vrignaud</h1>
-        <img src="images/logo-artisan.jpg" alt="Logo Artisan" class="logo-right">
-    </div>
+/* ===== Global ===== */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F5F0E6; /* beige clair */
+    color: #4B3621; /* brun foncé */
+    margin: 0;
+    padding: 0;
+}
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="entreprise.html">Entreprise</a></li>
-            <li><a href="services.html" class="active">Services</a></li>
-            <li><a href="galerie.html">Galerie</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-</header>
+/* ===== Header ===== */
+header {
+    background-color: #D9A066; /* orange doux */
+    padding: 20px;
+    text-align: center;
+}
 
-<main>
-    <section class="services">
-        <h2>Nos Services</h2>
+/* Container logo + texte */
+.logo-container {
+    display: flex;
+    align-items: center;       /* centre verticalement le texte et les logos */
+    justify-content: center;   /* centre horizontalement tout l'ensemble */
+    gap: 60px;                 /* espace entre logos et texte */
+    margin-bottom: 10px;
+    flex-wrap: wrap;           /* permet aux logos de descendre sur mobile si besoin */
+}
 
-        <div class="service-category">
-            <h3>Fenêtres</h3>
-            <ul>
-                <li>Rénovation de fenêtre</li>
-                <li>Pose de fenêtres bois / PVC</li>
-                <li>Changement de pièces détachées (crémone, gallet…)</li>
-            </ul>
-        </div>
+.logo-left,
+.logo-right {
+    height: 80px;   /* taille par défaut des logos */
+    width: auto;
+}
 
-        <div class="service-category">
-            <h3>Menuiserie sur mesure</h3>
-            <ul>
-                <li>Meubles en bois massif</li>
-                <li>Agencement sur mesure (cuisine, salle de bain…)</li>
-            </ul>
-        </div>
+header h1 {
+    margin: 0;
+    color: #FFFFFF;
+    font-size: 2em;
+    text-align: center;
+}
 
-        <div class="service-category">
-            <h3>Parquet et sols</h3>
-            <ul>
-                <li>Pose de parquet massif ou contrecollé</li>
-                <li>Rénovation de parquet ancien</li>
-            </ul>
-        </div>
+/* ===== Navigation ===== */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
 
-        <div class="service-category">
-            <h3>Portes et aménagements</h3>
-            <ul>
-                <li>Portes intérieures et extérieures</li>
-                <li>Escaliers et rambardes</li>
-            </ul>
-        </div>
+nav a {
+    text-decoration: none;
+    color: #4B3621;
+    font-weight: bold;
+}
 
-        <a href="contact.html" class="btn">Demandez un devis</a>
-    </section>
-</main>
+nav a:hover {
+    color: #FFFFFF;
+}
 
-<footer>
-    <p>&copy; 2025 ETS Vrignaud. Tous droits réservés.</p>
-</footer>
+/* ===== Main ===== */
+main {
+    padding: 20px;
+}
 
-</body>
-</html>
+section {
+    margin-bottom: 40px;
+}
+
+h2 {
+    color: #D97F2C; /* marron-orangé */
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #D97F2C;
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background-color: #B86B24;
+}
+
+/* ===== Footer ===== */
+footer {
+    background-color: #4B3621;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+    .logo-container {
+        gap: 40px;
+    }
+}
+
+@media (max-width: 600px) {
+    .logo-container {
+        gap: 20px;
+        flex-direction: column; /* empile verticalement logo - texte - logo */
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    .logo-left,
+    .logo-right {
+        height: 60px;
+    }
+}             

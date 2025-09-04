@@ -1,44 +1,45 @@
 ﻿/* style.css */
 
+/* ===== Global ===== */
 body {
     font-family: Arial, sans-serif;
-    background-color: #F5F0E6; /* beige clair */
-    color: #4B3621; /* brun foncé */
+    background-color: #F5F0E6;
+    color: #4B3621;
     margin: 0;
     padding: 0;
 }
 
+/* ===== Header ===== */
 header {
-    background-color: #D9A066; /* orange doux */
+    background-color: #D9A066;
     padding: 20px;
     text-align: center;
 }
 
-header {
-    text-align: center;
-    padding: 20px;
-}
-
+/* Container logo + texte */
 .logo-container {
     display: flex;
-    justify-content: center;
     align-items: center;
-    gap: 15px;
+    justify-content: center;
+    gap: 60px;
     margin-bottom: 10px;
+    flex-wrap: wrap;
 }
 
-.logo {
-    height: 60px;
+.logo-left,
+.logo-right {
+    height: 80px;
     width: auto;
 }
-
 
 header h1 {
     margin: 0;
     color: #FFFFFF;
     font-size: 2em;
+    text-align: center;
 }
 
+/* ===== Navigation ===== */
 nav ul {
     list-style: none;
     padding: 0;
@@ -54,10 +55,12 @@ nav a {
     font-weight: bold;
 }
 
-nav a:hover {
+nav a:hover,
+nav a.active {
     color: #FFFFFF;
 }
 
+/* ===== Main ===== */
 main {
     padding: 20px;
 }
@@ -67,9 +70,45 @@ section {
 }
 
 h2 {
-    color: #D97F2C; /* marron-orangé */
+    color: #D97F2C;
+    text-align: center;
+    margin-bottom: 30px;
 }
 
+/* ===== Services ===== */
+.services {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.service-category {
+    background-color: #F5F0E6;
+    border: 1px solid #D9A066;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    transition: transform 0.2s;
+}
+
+.service-category:hover {
+    transform: translateY(-5px);
+}
+
+.service-category h3 {
+    color: #D97F2C;
+    margin-bottom: 10px;
+}
+
+.service-category ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.service-category ul li {
+    margin-bottom: 5px;
+}
+
+/* ===== Boutons ===== */
 .btn {
     display: inline-block;
     padding: 10px 20px;
@@ -84,9 +123,33 @@ h2 {
     background-color: #B86B24;
 }
 
+/* ===== Footer ===== */
 footer {
     background-color: #4B3621;
     color: #FFFFFF;
     text-align: center;
     padding: 10px 0;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+    .logo-container {
+        gap: 40px;
+    }
+}
+
+@media (max-width: 600px) {
+    .logo-container {
+        gap: 20px;
+        flex-direction: column;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    .logo-left,
+    .logo-right {
+        height: 60px;
+    }
 }

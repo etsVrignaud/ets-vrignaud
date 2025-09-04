@@ -9,19 +9,35 @@
 /* Galerie responsive */
 .galerie {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
     padding: 20px;
 }
-.galerie img {
-    width: 100%;
-    border-radius: 5px;
+.galerie-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    border-radius: 10px;
     border: 2px solid #D97F2C;
-    cursor: pointer;
+    box-shadow: 2px 4px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
     transition: transform 0.3s;
 }
-.galerie img:hover {
-    transform: scale(1.05);
+.galerie-item:hover {
+    transform: translateY(-5px);
+}
+.galerie-item img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+.galerie-item p {
+    margin: 10px 0;
+    font-size: 0.9em;
+    color: #4B3621;
+    font-weight: 500;
+    text-align: center;
 }
 
 /* Lightbox */
@@ -64,7 +80,7 @@
         <ul>
             <li><a href="index.html">Accueil</a></li>
             <li><a href="entreprise.html">Entreprise</a></li>
-            <li><a href="galerie.html">Galerie</a></li>
+            <li><a href="galerie.html" class="active">Galerie</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
@@ -76,7 +92,7 @@
     <p>Découvrez nos projets de menuiserie et agencements sur mesure :</p>
 
     <div class="galerie" id="galerie-container">
-        <!-- Les images seront ajoutées par JS -->
+        <!-- Les images + légendes seront ajoutées par JS -->
     </div>
 </section>
 </main>
@@ -88,14 +104,23 @@
 </div>
 
 <script>
-// Générer automatiquement les 15 images
+// Générer automatiquement les 15 images avec légendes
 const galerie = document.getElementById('galerie-container');
 for (let i = 1; i <= 15; i++) {
+    const item = document.createElement('div');
+    item.className = 'galerie-item';
+
     const img = document.createElement('img');
-    img.src = `images/${i}.jpg`;
+    img.src = `images/photo${i}.jpg`;
     img.alt = `Projet ${i}`;
     img.onclick = () => openLightbox(img.src);
-    galerie.appendChild(img);
+
+    const caption = document.createElement('p');
+    caption.textContent = `Projet ${i}`;
+
+    item.appendChild(img);
+    item.appendChild(caption);
+    galerie.appendChild(item);
 }
 
 // Fonction lightbox
@@ -107,7 +132,7 @@ function openLightbox(src) {
     window.location.hash = "lightbox";
 }
 
-// Fermer la lightbox en cliquant sur le fond ou le "×"
+// Fermer la lightbox
 lightbox.onclick = function(e) {
     if (e.target === lightbox || e.target.id === 'lightbox-close') {
         window.location.hash = "";

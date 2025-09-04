@@ -1,6 +1,4 @@
-﻿/* style.css */
-
-/* ===== Global ===== */
+﻿/* ===== Global ===== */
 body {
     font-family: Arial, sans-serif;
     background-color: #F5F0E6; /* beige clair */
@@ -65,46 +63,12 @@ main {
     padding: 20px;
 }
 
+section {
+    margin-bottom: 40px;
+}
+
 h2 {
     color: #D97F2C; /* marron-orangé */
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-/* ===== Services ===== */
-.services {
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.service-category {
-    background-color: #FFFFFF;
-    border: 1px solid #D9A066;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.service-category:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-
-.service-category h3 {
-    color: #D97F2C;
-    margin-bottom: 10px;
-}
-
-.service-category ul {
-    list-style-type: disc;
-    padding-left: 20px;
-    margin: 0;
-}
-
-.service-category ul li {
-    margin-bottom: 5px;
 }
 
 /* ===== Boutons ===== */
@@ -116,7 +80,6 @@ h2 {
     text-decoration: none;
     border-radius: 5px;
     margin-top: 10px;
-    transition: background-color 0.2s;
 }
 
 .btn:hover {
@@ -129,6 +92,35 @@ footer {
     color: #FFFFFF;
     text-align: center;
     padding: 10px 0;
+}
+
+/* ===== Services ===== */
+.service-category {
+    background-color: #fff3e0; /* léger beige clair pour distinguer le pavé */
+    border: 1px solid #D9A066; /* contour doux */
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.service-category h3 {
+    color: #D97F2C;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.service-category p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.service-category ul {
+    padding-left: 20px;
+}
+
+.service-category ul li {
+    margin-bottom: 5px;
 }
 
 /* ===== Responsive ===== */
@@ -151,9 +143,5 @@ footer {
     .logo-left,
     .logo-right {
         height: 60px;
-    }
-
-    .service-category {
-        padding: 15px;
     }
 }

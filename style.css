@@ -3,15 +3,15 @@
 /* ===== Global ===== */
 body {
     font-family: Arial, sans-serif;
-    background-color: #F5F0E6;
-    color: #4B3621;
+    background-color: #F5F0E6; /* beige clair */
+    color: #4B3621; /* brun foncé */
     margin: 0;
     padding: 0;
 }
 
 /* ===== Header ===== */
 header {
-    background-color: #D9A066;
+    background-color: #D9A066; /* orange doux */
     padding: 20px;
     text-align: center;
 }
@@ -19,16 +19,16 @@ header {
 /* Container logo + texte */
 .logo-container {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 60px;
+    align-items: center;       /* centre verticalement le texte et les logos */
+    justify-content: center;   /* centre horizontalement tout l'ensemble */
+    gap: 60px;                 /* espace entre logos et texte */
     margin-bottom: 10px;
-    flex-wrap: wrap;
+    flex-wrap: wrap;           /* permet aux logos de descendre sur mobile si besoin */
 }
 
 .logo-left,
 .logo-right {
-    height: 80px;
+    height: 80px;   /* taille par défaut des logos */
     width: auto;
 }
 
@@ -55,8 +55,7 @@ nav a {
     font-weight: bold;
 }
 
-nav a:hover,
-nav a.active {
+nav a:hover {
     color: #FFFFFF;
 }
 
@@ -70,45 +69,9 @@ section {
 }
 
 h2 {
-    color: #D97F2C;
-    text-align: center;
-    margin-bottom: 30px;
+    color: #D97F2C; /* marron-orangé */
 }
 
-/* ===== Services ===== */
-.services {
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.service-category {
-    background-color: #F5F0E6;
-    border: 1px solid #D9A066;
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    transition: transform 0.2s;
-}
-
-.service-category:hover {
-    transform: translateY(-5px);
-}
-
-.service-category h3 {
-    color: #D97F2C;
-    margin-bottom: 10px;
-}
-
-.service-category ul {
-    list-style-type: disc;
-    padding-left: 20px;
-}
-
-.service-category ul li {
-    margin-bottom: 5px;
-}
-
-/* ===== Boutons ===== */
 .btn {
     display: inline-block;
     padding: 10px 20px;
@@ -141,7 +104,7 @@ footer {
 @media (max-width: 600px) {
     .logo-container {
         gap: 20px;
-        flex-direction: column;
+        flex-direction: column; /* empile verticalement logo - texte - logo */
     }
 
     header h1 {

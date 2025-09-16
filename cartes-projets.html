@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Projets & Budgets – Graine d'Ébène</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      text-align: center;
+      padding: 30px 15px;
+      color: #333;
+    }
+
+    .galerie-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .fiche-projet {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.2s ease;
+    }
+
+    .fiche-projet:hover {
+      transform: translateY(-5px);
+    }
+
+    .fiche-projet img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .fiche-projet .contenu {
+      padding: 15px;
+    }
+
+    .fiche-projet h3 {
+      margin: 0;
+      font-size: 1.2rem;
+      color: #333;
+    }
+
+    .fiche-projet p {
+      font-size: 0.95rem;
+      color: #666;
+      margin: 8px 0;
+    }
+
+    .fiche-projet .prix {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #2c7a7b;
+      margin-top: 10px;
+    }
+
+    .fiche-projet .sur-devis {
+      font-size: 1rem;
+      font-weight: bold;
+      color: #a94442;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Nos Réalisations & Budgets indicatifs</h1>
+
+  <div class="galerie-container">
+    <!-- Fiche projet avec prix -->
+    <div class="fiche-projet">
+      <img src="images/bibliotheque.jpg" alt="Bibliothèque sur mesure">
+      <div class="contenu">
+        <h3>Bibliothèque murale en chêne massif</h3>
+        <p>Sur mesure, finition huilée, intégration parfaite dans un salon. Pose incluse.</p>
+        <div class="prix">≈ 5 200 € TTC</div>
+      </div>
+    </div>
+
+    <!-- Fiche projet sans prix (sur devis) -->
+    <div class="fiche-projet">
+      <img src="images/escalier.jpg" alt="Escalier bois">
+      <div class="contenu">
+        <h3>Escalier en hêtre contemporain</h3>
+        <p>Fabrication artisanale, garde-corps métallique discret, finitions naturelles.</p>
+        <div class="sur-devis">Prix sur devis</div>
+      </div>
+    </div>
+
+    <!-- Fiche projet avec prix -->
+    <div class="fiche-projet">
+      <img src="images/meuble-tv.jpg" alt="Meuble TV sur mesure">
+      <div class="contenu">
+        <h3>Meuble TV et rangement intégré</h3>
+        <p>Design épuré, bois et laque, adapté à un salon moderne. Pose incluse.</p>
+        <div class="prix">≈ 3 600 € TTC</div>
+      </div>
+    </div>
+
+    <!-- Exemple d'une fiche juste photo + description -->
+    <div class="fiche-projet">
+      <img src="images/fenetre.jpg" alt="Fenêtre sur mesure">
+      <div class="contenu">
+        <h3>Fenêtres bois et alu sur mesure</h3>
+        <p>Isolation renforcée, reproduction à l’identique de l’existant, idéal rénovation.</p>
+        <!-- Pas de prix affiché -->
+      </div>
+    </div>
+  </div>
+</body>
+</html>

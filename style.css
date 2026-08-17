@@ -1,149 +1,533 @@
-﻿/* ===== Global ===== */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #D9C9A3; /* beige sable */
-    color: #000000; /* noir profond */
+﻿/* =========================================================
+   ETS VRIGNAUD — CHARTE GRAPHIQUE
+   Matrice inspirée de la page Audit Menuiserie
+   ========================================================= */
+
+/* ===== VARIABLES ===== */
+
+:root {
+    --bg: #141F29;
+    --panel: #1B2B39;
+    --panel-2: #20364A;
+
+    --line: #5FA0C4;
+
+    --paper: #EDE6D6;
+
+    --wood: #C17F3C;
+    --wood-light: #D99A5C;
+
+    --red: #C1503F;
+
+    --text: #E8EEF2;
+    --text-dim: #9FB3C2;
+
+    --serif: Georgia, "Iowan Old Style", "Palatino Linotype", serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --mono: "SF Mono", Consolas, "Courier New", monospace;
+}
+
+
+/* ===== RESET ===== */
+
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* ===== Header ===== */
-header {
-    background-color: #4B2E2A; /* marron ébène */
-    padding: 20px;
-    text-align: center;
+html {
+    scroll-behavior: smooth;
 }
 
-/* Container logo + texte */
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+}
+
+
+/* ===== CONTENEUR GLOBAL ===== */
+
+main,
+header > *,
+footer > * {
+    max-width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* ===== HEADER ===== */
+
+header {
+    background: rgba(20, 31, 41, 0.96);
+    border-bottom: 1px solid rgba(95, 160, 196, 0.18);
+    padding: 22px 28px 18px;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: blur(8px);
+}
+
+
+/* ===== LOGOS + NOM ===== */
+
 .logo-container {
+    max-width: 1080px;
+    margin: 0 auto 18px;
+
     display: flex;
-    align-items: center;       /* centre verticalement le texte et les logos */
-    justify-content: center;   /* centre horizontalement tout l'ensemble */
-    gap: 60px;                 /* espace entre logos et texte */
-    margin-bottom: 10px;
-    flex-wrap: wrap;           /* permet aux logos de descendre sur mobile si besoin */
+    align-items: center;
+    justify-content: center;
+
+    gap: 42px;
+    flex-wrap: wrap;
 }
 
 .logo-left,
 .logo-right {
-    height: 80px;   /* taille par défaut des logos */
+    height: 68px;
     width: auto;
+    object-fit: contain;
 }
 
 header h1 {
     margin: 0;
-    color: #D9C9A3; /* beige sable en contraste */
-    font-size: 2em;
-    text-align: center;
+
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(25px, 4vw, 34px);
+
+    color: var(--text);
+    letter-spacing: -0.01em;
 }
 
-/* ===== Navigation ===== */
+
+/* ===== NAVIGATION ===== */
+
+nav {
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
 nav ul {
     list-style: none;
-    padding: 0;
-    margin: 10px 0 0 0;
+
     display: flex;
     justify-content: center;
-    gap: 20px;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 8px 24px;
+
+    padding: 8px 0 2px;
+}
+
+nav li {
+    list-style: none;
 }
 
 nav a {
+    display: inline-block;
+
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+
     text-decoration: none;
-    color: #D9C9A3; /* beige sable */
-    font-weight: bold;
+
+    color: var(--text-dim);
+
+    padding: 7px 0;
+
+    transition:
+        color 0.2s ease,
+        border-color 0.2s ease;
 }
 
-nav a:hover,
+nav a:hover {
+    color: var(--line);
+}
+
 nav a.active {
-    color: #000000; /* noir profond */
+    color: var(--wood-light);
 }
 
-/* ===== Main ===== */
+
+/* ===== MAIN ===== */
+
 main {
-    padding: 20px;
+    padding: 0 28px;
 }
+
+
+/* ===== SECTIONS ===== */
 
 section {
-    margin-bottom: 40px;
+    padding: 64px 0;
+
+    border-bottom: 1px solid rgba(95, 160, 196, 0.14);
 }
 
-h2, h3 {
-    color: #4B2E2A; /* marron ébène */
+section:last-child {
+    border-bottom: none;
 }
 
-/* ===== Boutons ===== */
+
+/* ===== TITRES ===== */
+
+h1,
+h2,
+h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+}
+
+h2 {
+    color: var(--text);
+    font-size: clamp(26px, 4vw, 34px);
+
+    margin-bottom: 18px;
+}
+
+h3 {
+    color: var(--text);
+}
+
+
+/* ===== TEXTE ===== */
+
+p {
+    color: var(--text-dim);
+    font-size: 15px;
+}
+
+main section > p {
+    max-width: 65ch;
+}
+
+
+/* ===== BOUTONS ===== */
+
 .btn {
     display: inline-block;
-    padding: 10px 20px;
-    background-color: #4B2E2A; /* marron ébène */
-    color: #D9C9A3; /* beige sable */
+
+    margin-top: 22px;
+
+    background: var(--wood);
+    color: #1A120A;
+
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: 0.04em;
+
+    padding: 13px 21px;
+
+    border-radius: 2px;
+
     text-decoration: none;
-    border-radius: 5px;
-    margin-top: 10px;
-    transition: 0.3s;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
 }
 
 .btn:hover {
-    background-color: #000000; /* noir profond */
-    color: #D9C9A3; /* beige sable */
+    background: var(--wood-light);
+    color: #1A120A;
+
+    transform: translateY(-1px);
 }
 
-/* ===== Footer ===== */
-footer {
-    background-color: #000000; /* noir profond */
-    color: #D9C9A3; /* beige sable */
-    text-align: center;
-    padding: 10px 0;
-}
 
-/* ===== Services ===== */
+/* ===== CARTES / BLOCS ===== */
+
 .service-category {
-    background-color: #D9C9A3; /* beige sable */
-    border: 1px solid #4B2E2A; /* marron ébène */
-    border-radius: 8px;
-    padding: 20px;
+    background: var(--panel);
+
+    border: 1px solid rgba(95, 160, 196, 0.18);
+
+    border-radius: 4px;
+
+    padding: 26px 24px;
+
     margin-bottom: 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+    box-shadow:
+        0 18px 35px -25px rgba(0, 0, 0, 0.7);
+
+    transition:
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.service-category:hover {
+    border-color: rgba(95, 160, 196, 0.38);
+
+    transform: translateY(-2px);
 }
 
 .service-category h3 {
-    color: #4B2E2A; /* marron ébène */
+    font-size: 21px;
+
     margin-top: 0;
     margin-bottom: 10px;
+
+    color: var(--text);
 }
 
 .service-category p {
-    margin-bottom: 10px;
-    line-height: 1.5;
+    margin-bottom: 12px;
+
+    line-height: 1.6;
 }
 
 .service-category ul {
-    padding-left: 20px;
+    padding-left: 0;
+
+    list-style: none;
 }
 
 .service-category ul li {
-    margin-bottom: 5px;
+    color: var(--text-dim);
+
+    font-size: 14px;
+
+    padding: 8px 0 8px 18px;
+
+    border-top: 1px solid rgba(95, 160, 196, 0.1);
+
+    position: relative;
 }
 
-/* ===== Responsive ===== */
+.service-category ul li:first-child {
+    border-top: none;
+}
+
+.service-category ul li::before {
+    content: "—";
+
+    position: absolute;
+    left: 0;
+
+    color: var(--line);
+}
+
+
+/* ===== FORMULAIRES ===== */
+
+input,
+textarea,
+select {
+    width: 100%;
+
+    background: var(--panel-2);
+
+    border: 1px solid rgba(95, 160, 196, 0.25);
+
+    color: var(--text);
+
+    padding: 11px 12px;
+
+    border-radius: 2px;
+
+    font-family: var(--sans);
+    font-size: 14.5px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+
+    border-color: var(--line);
+
+    box-shadow: 0 0 0 2px rgba(95, 160, 196, 0.08);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+
+
+/* ===== GALERIE / IMAGES ===== */
+
+.gallery,
+.galerie,
+.gallery-container {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.gallery img,
+.galerie img,
+.gallery-container img {
+    width: 100%;
+
+    display: block;
+
+    border-radius: 3px;
+
+    border: 1px solid rgba(95, 160, 196, 0.18);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.gallery img:hover,
+.galerie img:hover,
+.gallery-container img:hover {
+    transform: translateY(-3px);
+
+    border-color: var(--wood);
+
+    box-shadow:
+        0 20px 35px -20px rgba(0, 0, 0, 0.8);
+}
+
+
+/* ===== FOOTER ===== */
+
+footer {
+    margin-top: 0;
+
+    background: var(--panel);
+
+    border-top: 1px solid rgba(95, 160, 196, 0.16);
+
+    padding: 42px 28px 50px;
+
+    text-align: center;
+}
+
+footer p {
+    color: var(--text-dim);
+
+    font-family: var(--mono);
+    font-size: 12px;
+
+    letter-spacing: 0.02em;
+}
+
+
+/* ===== PETITS ÉLÉMENTS TECHNIQUES ===== */
+
+hr {
+    border: none;
+
+    border-top: 1px solid rgba(95, 160, 196, 0.16);
+
+    margin: 35px 0;
+}
+
+strong {
+    color: var(--text);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
 @media (max-width: 900px) {
+
     .logo-container {
-        gap: 40px;
+        gap: 28px;
+    }
+
+    nav ul {
+        gap: 6px 16px;
+    }
+
+    .gallery,
+    .galerie,
+    .gallery-container {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
+
 
 @media (max-width: 600px) {
-    .logo-container {
-        gap: 20px;
-        flex-direction: column; /* empile verticalement logo - texte - logo */
+
+    header {
+        position: relative;
+
+        padding: 18px 18px 15px;
     }
 
-    header h1 {
-        font-size: 1.5em;
+    .logo-container {
+        flex-direction: column;
+
+        gap: 12px;
+
+        margin-bottom: 12px;
     }
 
     .logo-left,
     .logo-right {
-        height: 60px;
+        height: 52px;
+    }
+
+    header h1 {
+        font-size: 26px;
+    }
+
+    nav ul {
+        flex-direction: column;
+
+        gap: 2px;
+    }
+
+    nav a {
+        font-size: 11px;
+
+        padding: 6px 0;
+    }
+
+    main {
+        padding: 0 20px;
+    }
+
+    section {
+        padding: 45px 0;
+    }
+
+    h2 {
+        font-size: 27px;
+    }
+
+    .service-category {
+        padding: 22px 18px;
+    }
+
+    .gallery,
+    .galerie,
+    .gallery-container {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        padding-left: 20px;
+        padding-right: 20px;
     }
 }

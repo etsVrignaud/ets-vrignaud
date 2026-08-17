@@ -3,8 +3,6 @@
    Matrice inspirée de la page Audit Menuiserie
    ========================================================= */
 
-/* ===== VARIABLES ===== */
-
 :root {
     --bg: #141F29;
     --panel: #1B2B39;
@@ -28,7 +26,9 @@
 }
 
 
-/* ===== RESET ===== */
+/* =========================================================
+   RESET
+   ========================================================= */
 
 * {
     box-sizing: border-box;
@@ -57,31 +57,68 @@ a {
 }
 
 
-/* ===== CONTENEUR GLOBAL ===== */
+/* =========================================================
+   CONTENEUR
+   ========================================================= */
 
-main,
-header > *,
-footer > * {
+main {
     max-width: 1080px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
+    padding: 0 28px;
 }
 
 
-/* ===== HEADER ===== */
+/* =========================================================
+   TYPOGRAPHIE
+   ========================================================= */
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--serif);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+}
+
+p {
+    color: var(--text-dim);
+}
+
+.eyebrow {
+    display: inline-block;
+
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+
+    color: var(--line);
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
 
 header {
-    background: rgba(20, 31, 41, 0.96);
-    border-bottom: 1px solid rgba(95, 160, 196, 0.18);
-    padding: 22px 28px 18px;
+    background: rgba(20, 31, 41, .96);
+
+    border-bottom: 1px solid rgba(95, 160, 196, .18);
+
+    padding: 20px 28px 16px;
+
     position: sticky;
     top: 0;
     z-index: 50;
+
     backdrop-filter: blur(8px);
 }
 
 
-/* ===== LOGOS + NOM ===== */
+/* =========================================================
+   LOGOS / IDENTITÉ
+   ========================================================= */
 
 .logo-container {
     max-width: 1080px;
@@ -102,19 +139,30 @@ header {
     object-fit: contain;
 }
 
-header h1 {
-    margin: 0;
+.brand-title {
+    text-align: center;
+}
 
-    font-family: var(--serif);
-    font-weight: 400;
-    font-size: clamp(25px, 4vw, 34px);
+.brand-title h1 {
+    margin: 4px 0 3px;
 
     color: var(--text);
-    letter-spacing: -0.01em;
+
+    font-size: clamp(26px, 4vw, 35px);
+}
+
+.brand-title p {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .06em;
+
+    color: var(--text-dim);
 }
 
 
-/* ===== NAVIGATION ===== */
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
 
 nav {
     max-width: 1080px;
@@ -130,9 +178,7 @@ nav ul {
 
     flex-wrap: wrap;
 
-    gap: 8px 24px;
-
-    padding: 8px 0 2px;
+    gap: 7px 23px;
 }
 
 nav li {
@@ -143,8 +189,8 @@ nav a {
     display: inline-block;
 
     font-family: var(--mono);
-    font-size: 12px;
-    letter-spacing: 0.04em;
+    font-size: 11px;
+    letter-spacing: .045em;
     text-transform: uppercase;
 
     text-decoration: none;
@@ -153,9 +199,7 @@ nav a {
 
     padding: 7px 0;
 
-    transition:
-        color 0.2s ease,
-        border-color 0.2s ease;
+    transition: color .2s ease;
 }
 
 nav a:hover {
@@ -167,73 +211,41 @@ nav a.active {
 }
 
 
-/* ===== MAIN ===== */
-
-main {
-    padding: 0 28px;
-}
-
-
-/* ===== SECTIONS ===== */
+/* =========================================================
+   SECTIONS GÉNÉRALES
+   ========================================================= */
 
 section {
-    padding: 64px 0;
-
-    border-bottom: 1px solid rgba(95, 160, 196, 0.14);
+    border-bottom: 1px solid rgba(95, 160, 196, .14);
 }
 
-section:last-child {
-    border-bottom: none;
-}
-
-
-/* ===== TITRES ===== */
-
-h1,
-h2,
-h3 {
-    font-family: var(--serif);
-    font-weight: 400;
-    letter-spacing: -0.01em;
-}
-
-h2 {
-    color: var(--text);
-    font-size: clamp(26px, 4vw, 34px);
-
-    margin-bottom: 18px;
-}
-
-h3 {
-    color: var(--text);
-}
-
-
-/* ===== TEXTE ===== */
-
-p {
-    color: var(--text-dim);
-    font-size: 15px;
-}
-
-main section > p {
+.section-heading {
     max-width: 65ch;
+    margin-bottom: 36px;
+}
+
+.section-heading h2 {
+    margin-top: 10px;
+
+    color: var(--text);
+
+    font-size: clamp(27px, 4vw, 35px);
+    line-height: 1.15;
 }
 
 
-/* ===== BOUTONS ===== */
+/* =========================================================
+   BOUTONS
+   ========================================================= */
 
-.btn {
+.btn,
+.btn-primary,
+.btn-secondary {
     display: inline-block;
 
-    margin-top: 22px;
-
-    background: var(--wood);
-    color: #1A120A;
-
     font-family: var(--mono);
-    font-size: 13px;
-    letter-spacing: 0.04em;
+    font-size: 12px;
+    letter-spacing: .045em;
 
     padding: 13px 21px;
 
@@ -242,24 +254,550 @@ main section > p {
     text-decoration: none;
 
     transition:
-        background 0.2s ease,
-        transform 0.2s ease;
+        background .2s ease,
+        color .2s ease,
+        border-color .2s ease,
+        transform .2s ease;
 }
 
-.btn:hover {
-    background: var(--wood-light);
+.btn,
+.btn-primary {
+    background: var(--wood);
     color: #1A120A;
+
+    border: 1px solid var(--wood);
+}
+
+.btn:hover,
+.btn-primary:hover {
+    background: var(--wood-light);
+    border-color: var(--wood-light);
 
     transform: translateY(-1px);
 }
 
+.btn-secondary {
+    border: 1px solid rgba(232, 238, 242, .3);
+    color: var(--text);
+}
 
-/* ===== CARTES / BLOCS ===== */
+.btn-secondary:hover {
+    border-color: var(--line);
+    color: var(--line);
+}
+
+
+/* =========================================================
+   ACCUEIL — HERO
+   ========================================================= */
+
+.hero-home {
+    min-height: 590px;
+
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+
+    gap: 45px;
+
+    align-items: center;
+
+    padding: 82px 0 78px;
+}
+
+.hero-content h2 {
+    max-width: 680px;
+
+    margin: 15px 0 22px;
+
+    color: var(--text);
+
+    font-family: var(--serif);
+    font-size: clamp(38px, 5vw, 55px);
+    font-weight: 400;
+
+    line-height: 1.08;
+}
+
+.hero-content h2 em {
+    color: var(--wood-light);
+    font-style: italic;
+}
+
+.hero-content > p {
+    max-width: 57ch;
+
+    font-size: 17px;
+
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 13px;
+    flex-wrap: wrap;
+}
+
+
+/* =========================================================
+   HERO — CARTE
+   ========================================================= */
+
+.hero-card {
+    min-height: 360px;
+
+    display: flex;
+    align-items: flex-end;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(217, 154, 92, .15),
+            rgba(20, 31, 41, .2)
+        ),
+        var(--panel);
+
+    border: 1px solid rgba(95, 160, 196, .2);
+
+    box-shadow: 0 30px 60px -25px rgba(0, 0, 0, .7);
+
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 230px;
+    height: 230px;
+
+    right: -60px;
+    top: -70px;
+
+    border: 1px solid rgba(217, 154, 92, .35);
+
+    transform: rotate(45deg);
+}
+
+.hero-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 320px;
+    height: 1px;
+
+    background: rgba(95, 160, 196, .28);
+
+    right: -70px;
+    top: 48%;
+
+    transform: rotate(-28deg);
+}
+
+.hero-card-inner {
+    position: relative;
+    z-index: 2;
+
+    padding: 34px;
+}
+
+.hero-card-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+
+    color: var(--line);
+}
+
+.hero-card h3 {
+    margin: 12px 0 17px;
+
+    font-size: 38px;
+    line-height: 1.02;
+
+    color: var(--text);
+}
+
+.hero-card p {
+    max-width: 34ch;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.intro-home {
+    padding: 72px 0;
+}
+
+.intro-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 60px;
+}
+
+.large-text {
+    font-family: var(--serif);
+
+    font-size: 25px;
+
+    line-height: 1.4;
+
+    color: var(--text);
+}
+
+.intro-grid p + p {
+    margin-top: 18px;
+}
+
+
+/* =========================================================
+   SAVOIR-FAIRE
+   ========================================================= */
+
+.skills-home {
+    padding: 72px 0;
+
+    border-top: 1px solid rgba(95, 160, 196, .14);
+}
+
+.skills-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.skill-card {
+    background: var(--panel);
+
+    border: 1px solid rgba(95, 160, 196, .18);
+
+    border-radius: 3px;
+
+    padding: 27px 23px;
+
+    min-height: 270px;
+
+    display: flex;
+    flex-direction: column;
+
+    transition:
+        transform .2s ease,
+        border-color .2s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-3px);
+
+    border-color: rgba(217, 154, 92, .55);
+}
+
+.skill-number {
+    font-family: var(--mono);
+
+    font-size: 12px;
+
+    color: var(--wood-light);
+}
+
+.skill-card h3 {
+    margin: 15px 0 10px;
+
+    font-size: 23px;
+
+    color: var(--text);
+}
+
+.skill-card p {
+    font-size: 14px;
+}
+
+.skill-card a {
+    margin-top: auto;
+    padding-top: 22px;
+
+    color: var(--line);
+
+    font-family: var(--mono);
+    font-size: 11px;
+
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   BLOC AUDIT
+   ========================================================= */
+
+.audit-home {
+    margin-left: -28px;
+    margin-right: -28px;
+
+    padding: 70px 28px;
+
+    display: grid;
+
+    grid-template-columns: 1.4fr .6fr;
+
+    gap: 50px;
+
+    background: var(--panel);
+
+    border-top: 1px solid rgba(95, 160, 196, .16);
+    border-bottom: 1px solid rgba(95, 160, 196, .16);
+}
+
+.audit-home-content {
+    max-width: 700px;
+}
+
+.audit-home h2 {
+    margin: 11px 0 20px;
+
+    color: var(--text);
+
+    font-size: clamp(28px, 4vw, 38px);
+
+    line-height: 1.15;
+}
+
+.audit-home h2 em {
+    color: var(--wood-light);
+    font-style: italic;
+}
+
+.audit-home p {
+    max-width: 62ch;
+
+    margin-bottom: 15px;
+
+    font-size: 15px;
+}
+
+.audit-home .btn-primary {
+    margin-top: 13px;
+}
+
+.audit-home-note {
+    align-self: center;
+
+    padding: 28px;
+
+    border-left: 2px solid var(--wood);
+}
+
+.audit-home-note span {
+    font-family: var(--mono);
+
+    color: var(--line);
+
+    font-size: 12px;
+}
+
+.audit-home-note strong {
+    display: block;
+
+    margin: 12px 0;
+
+    font-family: var(--serif);
+
+    color: var(--text);
+
+    font-size: 25px;
+
+    line-height: 1.15;
+}
+
+.audit-home-note p {
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   PROJETS
+   ========================================================= */
+
+.projects-home {
+    padding: 72px 0;
+}
+
+.projects-home-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+}
+
+.project-placeholder {
+    min-height: 250px;
+
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    background: var(--panel);
+
+    border: 1px solid rgba(95, 160, 196, .18);
+
+    text-decoration: none;
+
+    transition:
+        transform .2s ease,
+        border-color .2s ease;
+}
+
+.project-placeholder:hover {
+    transform: translateY(-3px);
+
+    border-color: var(--wood);
+}
+
+.project-placeholder span {
+    font-family: var(--mono);
+
+    font-size: 11px;
+
+    letter-spacing: .12em;
+    text-transform: uppercase;
+
+    color: var(--line);
+}
+
+.project-placeholder strong {
+    font-family: var(--serif);
+
+    font-size: 28px;
+
+    line-height: 1.15;
+
+    color: var(--text);
+}
+
+
+/* =========================================================
+   ZONES LOCALES
+   ========================================================= */
+
+.areas-home {
+    padding: 72px 0;
+}
+
+.areas-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 1px;
+
+    background: rgba(95, 160, 196, .18);
+
+    border: 1px solid rgba(95, 160, 196, .18);
+}
+
+.areas-grid a {
+    min-height: 160px;
+
+    padding: 23px;
+
+    display: flex;
+    flex-direction: column;
+
+    background: var(--bg);
+
+    text-decoration: none;
+
+    transition: background .2s ease;
+}
+
+.areas-grid a:hover {
+    background: var(--panel);
+}
+
+.areas-grid span {
+    font-family: var(--mono);
+
+    font-size: 11px;
+
+    color: var(--line);
+}
+
+.areas-grid strong {
+    margin-top: auto;
+
+    font-family: var(--serif);
+
+    font-size: 20px;
+
+    color: var(--text);
+}
+
+.areas-grid small {
+    margin-top: 7px;
+
+    font-family: var(--mono);
+
+    font-size: 10px;
+
+    color: var(--wood-light);
+}
+
+
+/* =========================================================
+   CONTACT ACCUEIL
+   ========================================================= */
+
+.contact-home {
+    padding: 72px 0;
+
+    display: grid;
+
+    grid-template-columns: 1fr auto;
+
+    gap: 40px;
+
+    align-items: center;
+
+    border-top: 1px solid rgba(95, 160, 196, .14);
+}
+
+.contact-home h2 {
+    margin: 10px 0 14px;
+
+    max-width: 620px;
+
+    color: var(--text);
+
+    font-size: clamp(28px, 4vw, 38px);
+
+    line-height: 1.15;
+}
+
+.contact-home p {
+    max-width: 55ch;
+}
+
+
+/* =========================================================
+   ANCIENNES CARTES SERVICES
+   ========================================================= */
 
 .service-category {
     background: var(--panel);
 
-    border: 1px solid rgba(95, 160, 196, 0.18);
+    border: 1px solid rgba(95, 160, 196, .18);
 
     border-radius: 4px;
 
@@ -267,16 +805,15 @@ main section > p {
 
     margin-bottom: 20px;
 
-    box-shadow:
-        0 18px 35px -25px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 18px 35px -25px rgba(0, 0, 0, .7);
 
     transition:
-        border-color 0.2s ease,
-        transform 0.2s ease;
+        border-color .2s ease,
+        transform .2s ease;
 }
 
 .service-category:hover {
-    border-color: rgba(95, 160, 196, 0.38);
+    border-color: rgba(95, 160, 196, .38);
 
     transform: translateY(-2px);
 }
@@ -284,7 +821,6 @@ main section > p {
 .service-category h3 {
     font-size: 21px;
 
-    margin-top: 0;
     margin-bottom: 10px;
 
     color: var(--text);
@@ -309,7 +845,7 @@ main section > p {
 
     padding: 8px 0 8px 18px;
 
-    border-top: 1px solid rgba(95, 160, 196, 0.1);
+    border-top: 1px solid rgba(95, 160, 196, .1);
 
     position: relative;
 }
@@ -328,7 +864,9 @@ main section > p {
 }
 
 
-/* ===== FORMULAIRES ===== */
+/* =========================================================
+   FORMULAIRES
+   ========================================================= */
 
 input,
 textarea,
@@ -337,7 +875,7 @@ select {
 
     background: var(--panel-2);
 
-    border: 1px solid rgba(95, 160, 196, 0.25);
+    border: 1px solid rgba(95, 160, 196, .25);
 
     color: var(--text);
 
@@ -356,7 +894,7 @@ select:focus {
 
     border-color: var(--line);
 
-    box-shadow: 0 0 0 2px rgba(95, 160, 196, 0.08);
+    box-shadow: 0 0 0 2px rgba(95, 160, 196, .08);
 }
 
 textarea {
@@ -365,7 +903,9 @@ textarea {
 }
 
 
-/* ===== GALERIE / IMAGES ===== */
+/* =========================================================
+   GALERIE
+   ========================================================= */
 
 .gallery,
 .galerie,
@@ -386,12 +926,12 @@ textarea {
 
     border-radius: 3px;
 
-    border: 1px solid rgba(95, 160, 196, 0.18);
+    border: 1px solid rgba(95, 160, 196, .18);
 
     transition:
-        transform 0.25s ease,
-        border-color 0.25s ease,
-        box-shadow 0.25s ease;
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
 }
 
 .gallery img:hover,
@@ -401,41 +941,108 @@ textarea {
 
     border-color: var(--wood);
 
-    box-shadow:
-        0 20px 35px -20px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 20px 35px -20px rgba(0, 0, 0, .8);
 }
 
 
-/* ===== FOOTER ===== */
+/* =========================================================
+   FOOTER
+   ========================================================= */
 
 footer {
     margin-top: 0;
 
     background: var(--panel);
 
-    border-top: 1px solid rgba(95, 160, 196, 0.16);
+    border-top: 1px solid rgba(95, 160, 196, .16);
 
-    padding: 42px 28px 50px;
-
-    text-align: center;
+    padding: 45px 28px 30px;
 }
 
-footer p {
-    color: var(--text-dim);
+.footer-grid {
+    max-width: 1080px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 1.4fr 1fr 1fr;
+
+    gap: 35px;
+}
+
+.footer-grid h3 {
+    color: var(--text);
+
+    font-size: 22px;
+
+    margin-bottom: 10px;
+}
+
+.footer-grid h4 {
+    color: var(--line);
 
     font-family: var(--mono);
-    font-size: 12px;
 
-    letter-spacing: 0.02em;
+    font-size: 11px;
+
+    letter-spacing: .08em;
+
+    text-transform: uppercase;
+
+    margin-bottom: 12px;
+}
+
+.footer-grid p,
+.footer-grid li {
+    font-size: 13px;
+
+    color: var(--text-dim);
+}
+
+.footer-grid ul {
+    list-style: none;
+}
+
+.footer-grid li {
+    padding: 4px 0;
+}
+
+.footer-grid a {
+    text-decoration: none;
+}
+
+.footer-grid a:hover {
+    color: var(--wood-light);
+}
+
+.footer-bottom {
+    max-width: 1080px;
+
+    margin: 35px auto 0;
+
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(95, 160, 196, .12);
+}
+
+.footer-bottom p {
+    font-family: var(--mono);
+
+    font-size: 11px;
+
+    color: #6E8494;
 }
 
 
-/* ===== PETITS ÉLÉMENTS TECHNIQUES ===== */
+/* =========================================================
+   AUTRES ÉLÉMENTS
+   ========================================================= */
 
 hr {
     border: none;
 
-    border-top: 1px solid rgba(95, 160, 196, 0.16);
+    border-top: 1px solid rgba(95, 160, 196, .16);
 
     margin: 35px 0;
 }
@@ -446,17 +1053,45 @@ strong {
 
 
 /* =========================================================
-   RESPONSIVE
+   RESPONSIVE — TABLETTE
    ========================================================= */
 
 @media (max-width: 900px) {
 
-    .logo-container {
-        gap: 28px;
+    .hero-home {
+        grid-template-columns: 1fr;
+
+        padding-top: 65px;
     }
 
-    nav ul {
-        gap: 6px 16px;
+    .hero-card {
+        min-height: 300px;
+    }
+
+    .intro-grid {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .audit-home {
+        grid-template-columns: 1fr;
+    }
+
+    .audit-home-note {
+        max-width: 500px;
+    }
+
+    .areas-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
     }
 
     .gallery,
@@ -466,6 +1101,10 @@ strong {
     }
 }
 
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
 
 @media (max-width: 600px) {
 
@@ -488,10 +1127,6 @@ strong {
         height: 52px;
     }
 
-    header h1 {
-        font-size: 26px;
-    }
-
     nav ul {
         flex-direction: column;
 
@@ -499,7 +1134,7 @@ strong {
     }
 
     nav a {
-        font-size: 11px;
+        font-size: 10px;
 
         padding: 6px 0;
     }
@@ -508,26 +1143,83 @@ strong {
         padding: 0 20px;
     }
 
+    .hero-home {
+        min-height: auto;
+
+        padding: 55px 0;
+    }
+
+    .hero-content h2 {
+        font-size: 38px;
+    }
+
+    .hero-content > p {
+        font-size: 15px;
+    }
+
+    .hero-card {
+        min-height: 280px;
+    }
+
+    .hero-card h3 {
+        font-size: 32px;
+    }
+
     section {
-        padding: 45px 0;
+        padding: 50px 0;
     }
 
-    h2 {
-        font-size: 27px;
+    .intro-home,
+    .skills-home,
+    .projects-home,
+    .areas-home,
+    .contact-home {
+        padding: 50px 0;
     }
 
-    .service-category {
-        padding: 22px 18px;
+    .skills-grid {
+        grid-template-columns: 1fr;
     }
 
-    .gallery,
-    .galerie,
-    .gallery-container {
+    .skill-card {
+        min-height: 230px;
+    }
+
+    .audit-home {
+        margin-left: -20px;
+        margin-right: -20px;
+
+        padding: 50px 20px;
+    }
+
+    .projects-home-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-placeholder {
+        min-height: 190px;
+    }
+
+    .areas-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-home {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
         grid-template-columns: 1fr;
     }
 
     footer {
         padding-left: 20px;
         padding-right: 20px;
+    }
+
+    .gallery,
+    .galerie,
+    .gallery-container {
+        grid-template-columns: 1fr;
     }
 }

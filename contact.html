@@ -1,48 +1,320 @@
 ﻿<!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Contact - ETS Vrignaud</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <header>
+
+<header>
+
+    <div class="logo-container">
+
+        <img src="images/hero.jpg"
+             alt="ETS Vrignaud"
+             class="logo-left">
+
         <h1>ETS Vrignaud</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="entreprise.html">Entreprise</a></li>
-                <li><a href="galerie.html">Galerie</a></li>
-		<li><a href="services.html">Services</a></li> 
-                <li><a href="contact.html" class="active">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main>
-        <section>
-            <h2>Contactez-nous</h2>
-            <p>Vous avez un projet de menuiserie ? Remplissez le formulaire ci-dessous ou contactez-nous directement.</p>
+        <img src="images/logo-artisan.jpg"
+             alt="Artisan"
+             class="logo-right">
 
-            <!-- Formulaire Formspree -->
-            <form action="https://formspree.io/f/xvgrqedw" method="POST">
-                <label for="nom">Nom :</label><br>
-                <input type="text" id="nom" name="name" required><br><br>
+    </div>
 
-                <label for="email">Email :</label><br>
-                <input type="email" id="email" name="email" required><br><br>
+    <nav>
 
-                <label for="message">Message :</label><br>
-                <textarea id="message" name="message" rows="5" required></textarea><br><br>
+        <ul>
 
-                <button type="submit" class="btn">Envoyer</button>
+            <li>
+                <a href="index.html">
+                    Accueil
+                </a>
+            </li>
+
+            <li>
+                <a href="entreprise.html">
+                    Entreprise
+                </a>
+            </li>
+
+            <li>
+                <a href="galerie.html">
+                    Galerie
+                </a>
+            </li>
+
+            <li>
+                <a href="audit-menuiserie/">
+                    Audit de plan
+                </a>
+            </li>
+
+            <li>
+                <a href="services.html">
+                    Services
+                </a>
+            </li>
+
+            <li>
+                <a href="contact.html" class="active">
+                    Contact
+                </a>
+            </li>
+
+            <li>
+                <a href="cartes-projets.html">
+                    Prix
+                </a>
+            </li>
+
+            <li>
+                <a href="menuisier-provins.html">
+                    Menuisier à Provins
+                </a>
+            </li>
+
+            <li>
+                <a href="menuisier-montmirail.html">
+                    Menuisier à Montmirail
+                </a>
+            </li>
+
+            <li>
+                <a href="agencement-Epernay.html">
+                    Menuisier à Épernay
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+
+<main>
+
+    <!-- =====================================================
+         INTRODUCTION
+         ===================================================== -->
+
+    <section>
+
+        <span class="eyebrow">
+            ETS Vrignaud — contact
+        </span>
+
+        <h2>
+            Parlons de votre projet.
+        </h2>
+
+        <p>
+            Vous avez un projet de menuiserie, d'agencement
+            ou de rénovation ?
+        </p>
+
+        <p>
+            Décrivez-nous votre besoin. Quelques informations
+            et, si vous en disposez, des photos ou des plans
+            nous permettront de mieux comprendre votre projet.
+        </p>
+
+    </section>
+
+
+    <!-- =====================================================
+         FORMULAIRE
+         ===================================================== -->
+
+    <section>
+
+        <div class="service-category">
+
+            <span class="eyebrow">
+                Demande de contact
+            </span>
+
+            <h3>
+                Votre projet
+            </h3>
+
+            <form
+                action="https://formspree.io/f/xvgrqedw"
+                method="POST"
+            >
+
+                <div class="field">
+
+                    <label for="nom">
+                        Nom
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nom"
+                        name="name"
+                        placeholder="Votre nom"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label for="email">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="vous@exemple.fr"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label for="telephone">
+                        Téléphone
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="telephone"
+                        name="telephone"
+                        placeholder="06 00 00 00 00"
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label for="projet">
+                        Type de projet
+                    </label>
+
+                    <select
+                        id="projet"
+                        name="type_de_projet"
+                    >
+
+                        <option value="">
+                            Sélectionnez votre projet
+                        </option>
+
+                        <option value="fenetres">
+                            Fenêtres
+                        </option>
+
+                        <option value="parquet">
+                            Parquet
+                        </option>
+
+                        <option value="agencement">
+                            Agencement sur mesure
+                        </option>
+
+                        <option value="mobilier">
+                            Mobilier sur mesure
+                        </option>
+
+                        <option value="menuiserie">
+                            Menuiserie traditionnelle
+                        </option>
+
+                        <option value="autre">
+                            Autre projet
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="field">
+
+                    <label for="message">
+                        Votre projet
+                    </label>
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        placeholder="Décrivez votre projet, les dimensions approximatives, le lieu des travaux..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <input
+                    type="hidden"
+                    name="_subject"
+                    value="Nouvelle demande depuis le site ETS Vrignaud"
+                >
+
+
+                <button
+                    type="submit"
+                    class="btn"
+                >
+                    Envoyer ma demande
+                </button>
+
             </form>
-        </section>
-    </main>
 
-    <footer>
-        <p>&copy; 2025 ETS Vrignaud. Tous droits réservés.</p>
-    </footer>
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CONTACT DIRECT
+         ===================================================== -->
+
+    <section>
+
+        <span class="eyebrow">
+            Échange direct
+        </span>
+
+        <h2>
+            Une question avant de vous lancer ?
+        </h2>
+
+        <p>
+            Vous pouvez également nous contacter directement
+            pour discuter de votre projet et déterminer
+            ensemble la meilleure façon de l'aborder.
+        </p>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <p>
+        © 2025 ETS Vrignaud — Tous droits réservés.
+    </p>
+
+</footer>
+
+
 </body>
+
 </html>

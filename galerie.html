@@ -1,149 +1,282 @@
 ﻿<!DOCTYPE html>
 <html lang="fr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Galerie - ETS Vrignaud</title>
-<link rel="stylesheet" href="style.css">
-<style>
-/* Galerie responsive */
-.galerie {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-    padding: 20px;
-}
-.galerie-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: #fff;
-    border-radius: 10px;
-    border: 2px solid #D97F2C;
-    box-shadow: 2px 4px 10px rgba(0,0,0,0.1);
-    overflow: hidden;
-    transition: transform 0.3s;
-}
-.galerie-item:hover {
-    transform: translateY(-5px);
-}
-.galerie-item img {
-    width: 100%;
-    height: auto;
-    cursor: pointer;
-}
-.galerie-item p {
-    margin: 10px 0;
-    font-size: 0.9em;
-    color: #4B3621;
-    font-weight: 500;
-    text-align: center;
-}
 
-/* Lightbox */
-#lightbox {
-    display: none;
-    position: fixed;
-    z-index: 999;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(75, 54, 33, 0.9); /* marron foncé transparent */
-    justify-content: center;
-    align-items: center;
-}
-#lightbox img {
-    max-width: 90%;
-    max-height: 90%;
-    border: 3px solid #D97F2C;
-    border-radius: 5px;
-}
-#lightbox:target {
-    display: flex;
-}
-#lightbox-close {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    color: #FFFFFF;
-    font-size: 2em;
-    text-decoration: none;
-}
-</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Galerie - ETS Vrignaud</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <header>
-    <h1>ETS Vrignaud</h1>
+
+    <div class="logo-container">
+
+        <img src="images/hero.jpg"
+             alt="ETS Vrignaud"
+             class="logo-left">
+
+        <h1>ETS Vrignaud</h1>
+
+        <img src="images/logo-artisan.jpg"
+             alt="Artisan"
+             class="logo-right">
+
+    </div>
+
     <nav>
+
         <ul>
-            <li><a href="index.html">Accueil</a></li>
-            <li><a href="entreprise.html">Entreprise</a></li>
-            <li><a href="galerie.html" class="active">galerie</a></li>
-	    <li><a href="services.html">Services</a></li> 
-            <li><a href="contact.html">Contact</a></li>
+
+            <li>
+                <a href="index.html">Accueil</a>
+            </li>
+
+            <li>
+                <a href="entreprise.html">Entreprise</a>
+            </li>
+
+            <li>
+                <a href="galerie.html" class="active">
+                    Galerie
+                </a>
+            </li>
+
+            <li>
+                <a href="audit-menuiserie/">
+                    Audit de plan
+                </a>
+            </li>
+
+            <li>
+                <a href="services.html">
+                    Services
+                </a>
+            </li>
+
+            <li>
+                <a href="contact.html">
+                    Contact
+                </a>
+            </li>
+
+            <li>
+                <a href="cartes-projets.html">
+                    Prix
+                </a>
+            </li>
+
+            <li>
+                <a href="menuisier-provins.html">
+                    Menuisier à Provins
+                </a>
+            </li>
+
+            <li>
+                <a href="menuisier-montmirail.html">
+                    Menuisier à Montmirail
+                </a>
+            </li>
+
+            <li>
+                <a href="agencement-Epernay.html">
+                    Menuisier à Épernay
+                </a>
+            </li>
+
         </ul>
+
     </nav>
+
 </header>
 
-<main>
-<section>
-    <h2>Nos réalisations</h2>
-    <p>Découvrez nos projets de menuiserie et agencements sur mesure :</p>
 
-    <div class="galerie" id="galerie-container">
-        <!-- Les images + légendes seront ajoutées par JS -->
-    </div>
-</section>
+<main>
+
+    <!-- =====================================================
+         INTRODUCTION
+         ===================================================== -->
+
+    <section>
+
+        <span class="eyebrow">
+            ETS Vrignaud — réalisations
+        </span>
+
+        <h2>
+            Le bois, une fois travaillé.
+        </h2>
+
+        <p>
+            Découvrez quelques réalisations de menuiserie,
+            de mobilier et d'agencement réalisées par
+            ETS Vrignaud.
+        </p>
+
+    </section>
+
+
+    <!-- =====================================================
+         GALERIE
+         ===================================================== -->
+
+    <section>
+
+        <span class="eyebrow">
+            Galerie
+        </span>
+
+        <h2>
+            Nos réalisations
+        </h2>
+
+        <p style="margin-bottom:30px;">
+            Chaque projet est différent. Chaque détail compte.
+        </p>
+
+        <div class="galerie" id="galerie-container">
+            <!-- Les réalisations sont générées automatiquement -->
+        </div>
+
+    </section>
+
 </main>
 
-<!-- Lightbox -->
+
+<!-- =========================================================
+     LIGHTBOX
+     ========================================================= -->
+
 <div id="lightbox">
-    <a href="#" id="lightbox-close">&times;</a>
-    <img src="" alt="Agrandissement">
+
+    <a href="#"
+       id="lightbox-close"
+       aria-label="Fermer">
+        &times;
+    </a>
+
+    <img src=""
+         alt="Agrandissement de la réalisation">
+
 </div>
 
+
 <script>
-// Générer automatiquement les 15 images avec légendes
-const galerie = document.getElementById('galerie-container');
+
+/* =========================================================
+   GALERIE
+   ========================================================= */
+
+const galerie =
+    document.getElementById("galerie-container");
+
+
 for (let i = 1; i <= 15; i++) {
-    const item = document.createElement('div');
-    item.className = 'galerie-item';
 
-    const img = document.createElement('img');
+    const item =
+        document.createElement("div");
+
+    item.className = "galerie-item";
+
+
+    const img =
+        document.createElement("img");
+
     img.src = `images/photo${i}.jpg`;
-    img.alt = `Projet ${i}`;
-    img.onclick = () => openLightbox(img.src);
 
-    const caption = document.createElement('p');
-    caption.textContent = `Projet ${i}`;
+    img.alt =
+        `Réalisation ETS Vrignaud — projet ${i}`;
+
+    img.loading = "lazy";
+
+    img.onclick = () =>
+        openLightbox(img.src);
+
+
+    const caption =
+        document.createElement("p");
+
+    caption.textContent =
+        `Projet ${i}`;
+
 
     item.appendChild(img);
+
     item.appendChild(caption);
+
     galerie.appendChild(item);
 }
 
-// Fonction lightbox
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = lightbox.querySelector('img');
+
+/* =========================================================
+   LIGHTBOX
+   ========================================================= */
+
+const lightbox =
+    document.getElementById("lightbox");
+
+const lightboxImg =
+    lightbox.querySelector("img");
+
 
 function openLightbox(src) {
+
     lightboxImg.src = src;
-    window.location.hash = "lightbox";
+
+    lightbox.style.display = "flex";
 }
 
-// Fermer la lightbox
+
+/* =========================================================
+   FERMETURE LIGHTBOX
+   ========================================================= */
+
 lightbox.onclick = function(e) {
-    if (e.target === lightbox || e.target.id === 'lightbox-close') {
-        window.location.hash = "";
+
+    if (
+        e.target === lightbox ||
+        e.target.id === "lightbox-close"
+    ) {
+
+        lightbox.style.display = "none";
+
+        lightboxImg.src = "";
     }
+
 };
+
+
+/* =========================================================
+   ESC POUR FERMER
+   ========================================================= */
+
+document.addEventListener("keydown", function(e) {
+
+    if (e.key === "Escape") {
+
+        lightbox.style.display = "none";
+
+        lightboxImg.src = "";
+    }
+
+});
+
 </script>
 
+
 <footer>
-    <p>&copy; 2025 ETS Vrignaud. Tous droits réservés.</p>
+
+    <p>
+        © 2025 ETS Vrignaud — Tous droits réservés.
+    </p>
+
 </footer>
 
+
 </body>
+
 </html>
